@@ -1,6 +1,6 @@
 extends Area2D
 
-var sparks_scene:PackedScene = load("res://Scenes/Sparks.tscn")
+var sparks_scene:PackedScene = load("res://Scenes/Bits/Sparks.tscn")
 
 export var speed:float = 50.0
 

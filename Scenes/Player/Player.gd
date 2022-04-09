@@ -2,8 +2,8 @@ extends Area2D
 
 const SPEED:float = 100.0
 
-var bullet_scene:PackedScene = preload("res://Scenes/PlayerBullet.tscn")
-var sparks_scene:PackedScene = load("res://Scenes/Sparks.tscn")
+var bullet_scene:PackedScene = preload("res://Scenes/Player/PlayerBullet.tscn")
+var sparks_scene:PackedScene = load("res://Scenes/Bits/Sparks.tscn")
 
 var shot_cooldown_time:float = 0.25
 

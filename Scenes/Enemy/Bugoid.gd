@@ -1,4 +1,4 @@
-extends "res://Scenes/Enemy.gd"
+extends "res://Scenes/Enemy/Enemy.gd"
 
 func _physics_process(delta):
 	# AI processing

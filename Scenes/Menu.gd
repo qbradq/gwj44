@@ -17,4 +17,4 @@ func _on_StartButton_pressed():
 	$AudioTimer.start()
 
 func start():
-	get_tree().change_scene("res://Scenes/Level.tscn")
+	get_tree().change_scene("res://Scenes/Level/Level.tscn")

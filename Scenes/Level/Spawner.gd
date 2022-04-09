@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemy_scene:PackedScene = load("res://Scenes/Bugoid.tscn")
+var enemy_scene:PackedScene = load("res://Scenes/Enemy/Bugoid.tscn")
 
 var spawn_cooldown:float = 0.5
 var spawn_time:float
