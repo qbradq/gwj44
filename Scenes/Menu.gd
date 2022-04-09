@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	randomize()
+
 func _on_QuitButton_pressed():
 	$AudioStreamPlayer.play()
 	$AudioTimer.connect("timeout", self, "quit")

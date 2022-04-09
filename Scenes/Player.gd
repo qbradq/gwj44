@@ -47,9 +47,10 @@ func shoot():
 
 func die():
 	var pa = $PowAudio
-	remove_child(pa)
-	get_parent().find_node("AudioTemp").add_child(pa)
-	pa.play()
+	if pa != null:
+		remove_child(pa)
+		get_parent().find_node("AudioTemp").add_child(pa)
+		pa.play()
 	var sparks = sparks_scene.instance()
 	sparks.global_position = global_position
 	sparks.restart()
