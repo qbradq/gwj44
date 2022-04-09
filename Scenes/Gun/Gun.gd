@@ -1,7 +1,10 @@
 extends Node2D
 
 var bullet_scene:PackedScene = preload("res://Scenes/Player/PlayerBullet.tscn")
+
 export var shot_cooldown_time:float = 0.25
+export var ammo:int = 100
+export var infinite_ammo:bool = false
 
 var shoot_cooldown:float
 
@@ -13,6 +16,10 @@ func shoot(delta):
 
 
 func shoot_bullet():
+	if ammo <= 0:
+		return
+	if not infinite_ammo:
+		ammo -= 1
 	$FireAudio.play()
 	var bullet = bullet_scene.instance()
 	bullet.global_transform = global_transform
@@ -20,3 +27,6 @@ func shoot_bullet():
 
 func reset():
 	shoot_cooldown = 0.0
+
+func has_ammo()->bool:
+	return ammo > 0

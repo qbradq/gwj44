@@ -3,11 +3,16 @@ extends Area2D
 const SPEED:float = 100.0
 
 var sparks_scene:PackedScene = load("res://Scenes/Bits/Sparks.tscn")
+var default_gun_scene:PackedScene = load("res://Scenes/Gun/Gun.tscn")
 
 var velocity:Vector2
+var default_gun:Node2D
 
 func _ready():
 	add_to_group("player")
+	default_gun = default_gun_scene.instance()
+	default_gun.infinite_ammo = true
+	change_gun(default_gun)
 
 func _physics_process(delta):
 	# Movement
@@ -29,6 +34,8 @@ func _physics_process(delta):
 	# Shooting
 	if Input.is_mouse_button_pressed(1):
 		$Gun.shoot(delta)
+		if not $Gun.has_ammo():
+			change_gun(default_gun)
 	else:
 		$Gun.reset()
 
@@ -52,6 +59,8 @@ func _on_Player_area_entered(area):
 
 func change_gun(new_gun):
 	remove_child($Gun)
+	if new_gun.get_parent():
+		new_gun.get_parent().remove_child(new_gun)
 	new_gun.name = "Gun"
 	new_gun.position = Vector2.ZERO
 	add_child(new_gun)
