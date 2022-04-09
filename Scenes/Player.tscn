@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Art/Player/ship.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://Sound/pew.ogg" type="AudioStream" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 3.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="PewAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="PowAudio" type="AudioStreamPlayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
