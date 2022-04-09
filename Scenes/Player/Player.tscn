@@ -2,16 +2,13 @@
 
 [ext_resource path="res://Art/Player/ship.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://Sound/pew.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/Gun/Gun.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.0
 
 [node name="Player" type="Area2D"]
 script = ExtResource( 2 )
-
-[node name="PewAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
 
 [node name="PowAudio" type="AudioStreamPlayer" parent="."]
 
@@ -23,5 +20,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="Gun" parent="." instance=ExtResource( 4 )]
 
 [connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]

@@ -2,13 +2,9 @@ extends Area2D
 
 const SPEED:float = 100.0
 
-var bullet_scene:PackedScene = preload("res://Scenes/Player/PlayerBullet.tscn")
 var sparks_scene:PackedScene = load("res://Scenes/Bits/Sparks.tscn")
 
-var shot_cooldown_time:float = 0.25
-
 var velocity:Vector2
-var shoot_cooldown:float
 
 func _ready():
 	add_to_group("player")
@@ -32,18 +28,9 @@ func _physics_process(delta):
 		global_position.y = 172	
 	# Shooting
 	if Input.is_mouse_button_pressed(1):
-		shoot_cooldown -= delta
-		while shoot_cooldown <= 0.0:
-			shoot_cooldown += shot_cooldown_time
-			shoot()
+		$Gun.shoot(delta)
 	else:
-		shoot_cooldown = 0.0
-
-func shoot():
-	$PewAudio.play()
-	var bullet = bullet_scene.instance()
-	bullet.global_transform = global_transform
-	get_parent().add_child(bullet)
+		$Gun.reset()
 
 func die():
 	var pa = $PowAudio
@@ -62,3 +49,9 @@ func _on_Player_area_entered(area):
 	if area.is_in_group("enemy"):
 		area.die()
 		die()
+
+func change_gun(new_gun):
+	remove_child($Gun)
+	new_gun.name = "Gun"
+	new_gun.position = Vector2.ZERO
+	add_child(new_gun)
