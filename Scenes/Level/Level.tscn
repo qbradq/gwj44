@@ -12,6 +12,7 @@
 script = ExtResource( 4 )
 
 [node name="AfterDeathTimer" type="Timer" parent="."]
+wait_time = 5.0
 one_shot = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -41,6 +42,15 @@ margin_bottom = 176.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "AMMO: 100"
+
+[node name="TimeLabel" type="Label" parent="."]
+margin_left = 221.0
+margin_top = 5.0
+margin_right = 313.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "TIME: 1:59:59"
 
 [node name="PowerUp2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 246, 80 )
