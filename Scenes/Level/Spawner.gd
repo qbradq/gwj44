@@ -2,7 +2,8 @@ extends Node2D
 
 var enemy_scenes = [
 	preload("res://Scenes/Enemy/Bugoid.tscn"),
-	preload("res://Scenes/Enemy/Goober.tscn")
+	preload("res://Scenes/Enemy/Goober.tscn"),
+	preload("res://Scenes/Enemy/Zipper.tscn")
 ]
 
 var spawn_cooldown:float = 0.5
