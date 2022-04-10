@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Enemy/Bugoid.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Level/Spawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Level/Level.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/PowerUp/PowerUp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Fonts/Score.tres" type="DynamicFont" id=6]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 4 )
@@ -24,5 +25,12 @@ position = Vector2( 285, 129 )
 
 [node name="PowerUp" parent="." instance=ExtResource( 5 )]
 position = Vector2( 249, 89 )
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "SCORE: 1337"
 
 [connection signal="timeout" from="AfterDeathTimer" to="." method="_on_AfterDeathTimer_timeout"]
