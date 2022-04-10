@@ -10,7 +10,8 @@ var powerups = [
 	preload("res://Scenes/PowerUp/Rapid.tscn"),
 	preload("res://Scenes/PowerUp/Spread.tscn"),
 	preload("res://Scenes/PowerUp/FlameThrower.tscn"),
-	preload("res://Scenes/PowerUp/Laser.tscn")
+	preload("res://Scenes/PowerUp/Laser.tscn"),
+	preload("res://Scenes/PowerUp/Missle.tscn")
 ]
 
 var velocity:Vector2
