@@ -13,7 +13,12 @@ func _physics_process(delta):
 	while r.is_colliding():
 		var c = r.get_collider()
 		if c.is_in_group("enemy"):
-			c.die()
+			# Prevent off-screen hits
+			var p = c.global_position
+			if p.x < 0 || p.x > 320 || p.y < 0 || p.y > 180:
+				pass
+			else:
+				c.die()
 		r.add_exception(c)
 		r.force_raycast_update()
 	r.clear_exceptions()

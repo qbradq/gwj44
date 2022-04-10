@@ -6,8 +6,6 @@ func _ready():
 	var p = get_parent().find_node("Player")
 	if p != null:
 		velocity = (p.global_position - global_position).normalized() * speed
-	else:
-		print("BLARGGG!!!")
 
 func _physics_process(delta):
 	# AI processing

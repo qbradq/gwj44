@@ -3,7 +3,8 @@ extends Area2D
 var sparks_scene:PackedScene = load("res://Scenes/Bits/Sparks.tscn")
 
 export var speed:float = 50.0
-export var drop_chance:float = 5.0
+
+var drop_chance:float = 10.0
 
 var powerups = [
 	preload("res://Scenes/PowerUp/Rapid.tscn"),
