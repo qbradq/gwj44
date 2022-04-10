@@ -25,11 +25,22 @@ position = Vector2( 160, 90 )
 position = Vector2( 285, 129 )
 
 [node name="ScoreLabel" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 91.0
+margin_bottom = 22.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "SCORE: 1337"
+
+[node name="AmmoLabel" type="Label" parent="."]
+margin_left = 223.0
+margin_top = 160.0
+margin_right = 315.0
+margin_bottom = 176.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "AMMO: 100"
 
 [node name="PowerUp2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 246, 80 )

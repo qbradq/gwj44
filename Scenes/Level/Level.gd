@@ -3,7 +3,13 @@ extends Node2D
 var score:int
 
 func _process(delta):
+	# Update UI
 	$ScoreLabel.text = "SCORE: %d" % score
+	if $Player and $Player/Gun:
+		if $Player/Gun.infinite_ammo:
+			$AmmoLabel.text = "AMMO: ∞"
+		else:
+			$AmmoLabel.text = "AMMO: %d" % $Player/Gun.ammo
 
 func _physics_process(delta):
 	# Clean up temp audio nodes
