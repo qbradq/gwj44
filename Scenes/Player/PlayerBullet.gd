@@ -9,6 +9,5 @@ func _physics_process(delta):
 
 func _on_PlayerBullet_area_entered(area):
 	if area.is_in_group("enemy"):
-		get_parent().add_score(1)
 		area.die()
 		queue_free()

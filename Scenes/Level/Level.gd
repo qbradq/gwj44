@@ -19,7 +19,7 @@ func _process(delta):
 	var ltime = OS.get_unix_time() - start_time
 	var minutes = ltime / 60
 	var seconds = ltime % 60
-	$TimeLabel.text = "TIME: %d:%d" % [minutes, seconds]
+	$TimeLabel.text = "TIME: %d:%02d" % [minutes, seconds]
 
 func _physics_process(delta):
 	# Clean up temp audio nodes
