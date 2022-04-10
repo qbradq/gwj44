@@ -1,7 +1,6 @@
 extends Node2D
 
-var bullet_scene:PackedScene = preload("res://Scenes/Player/PlayerBullet.tscn")
-
+export var bullet_scene:PackedScene = preload("res://Scenes/Player/PlayerBullet.tscn")
 export var shot_cooldown_time:float = 0.25
 export var ammo:int = 100
 export var infinite_ammo:bool = false
@@ -21,6 +20,9 @@ func shoot_bullet():
 	if not infinite_ammo:
 		ammo -= 1
 	$FireAudio.play()
+	fire_projectile()
+
+func fire_projectile():
 	var bullet = bullet_scene.instance()
 	bullet.global_transform = global_transform
 	get_parent().get_parent().add_child(bullet)

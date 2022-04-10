@@ -6,7 +6,9 @@ export var speed:float = 50.0
 export var drop_chance:float = 5.0
 
 var powerups = [
-	load("res://Scenes/PowerUp/PowerUp.tscn")
+	load("res://Scenes/PowerUp/Rapid.tscn"),
+	load("res://Scenes/PowerUp/Spread.tscn"),
+	load("res://Scenes/PowerUp/FlameThrower.tscn")
 ]
 
 var velocity:Vector2

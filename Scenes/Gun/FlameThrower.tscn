@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Gun/Gun.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player/Flame.tscn" type="PackedScene" id=2]
+
+[node name="Gun" instance=ExtResource( 1 )]
+bullet_scene = ExtResource( 2 )
+shot_cooldown_time = 0.05
+ammo = 250
