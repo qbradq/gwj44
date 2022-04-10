@@ -25,7 +25,7 @@ func _physics_process(delta):
 
 func die():
 	# Score
-	get_parent().add_score(1)
+	LevelData.increment_score()
 	# Play the pow sound effect
 	var pa = $PowAudio
 	if pa != null:

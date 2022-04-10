@@ -1,14 +1,11 @@
 extends Node2D
 
-var score:int
-var start_time:int
-
 func _ready():
-	start_time = OS.get_unix_time()
+	LevelData.reset()
 
 func _process(delta):
 	# Score
-	$ScoreLabel.text = "SCORE: %d" % score
+	$ScoreLabel.text = "SCORE: %d" % LevelData.get_score()
 	# Ammo
 	if $Player and $Player/Gun:
 		if $Player/Gun.infinite_ammo:
@@ -16,7 +13,8 @@ func _process(delta):
 		else:
 			$AmmoLabel.text = "AMMO: %d" % $Player/Gun.ammo
 	# Time
-	var ltime = OS.get_unix_time() - start_time
+	LevelData.increment_time(delta)
+	var ltime = LevelData.get_time_elapsed()
 	var minutes = ltime / 60
 	var seconds = ltime % 60
 	$TimeLabel.text = "TIME: %d:%02d" % [minutes, seconds]
@@ -28,7 +26,4 @@ func _physics_process(delta):
 			c.queue_free()
 
 func _on_AfterDeathTimer_timeout():
-	get_tree().change_scene("res://Scenes/Menu.tscn")
-
-func add_score(amount):
-	score += amount
+	get_tree().change_scene("res://Scenes/Results.tscn")

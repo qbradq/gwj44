@@ -40,15 +40,19 @@ func _physics_process(delta):
 		$Gun.reset()
 
 func die():
+	# Play death audio and make it persistent
 	var pa = $PowAudio
 	if pa != null:
 		remove_child(pa)
 		get_parent().find_node("AudioTemp").add_child(pa)
 		pa.play()
+	# Create sparkes explosion
 	var sparks = sparks_scene.instance()
 	sparks.global_position = global_position
 	sparks.restart()
 	get_parent().add_child(sparks)
+	# Timer
+	LevelData.stop_timing()
 	get_parent().find_node("AfterDeathTimer").start()
 	queue_free()
 
