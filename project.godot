@@ -10,7 +10,8 @@ config_version=4
 
 [application]
 
-config/name="gwj44"
+config/name="Pew Pew"
+config/description="A simple space shooter where everything explodes in one hit, including your own ship!"
 run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 

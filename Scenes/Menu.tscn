@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Art/TextureButtons/Start/hover.png" type="Texture" id=2]
 [ext_resource path="res://Art/TextureButtons/Start/pressed.png" type="Texture" id=3]
 [ext_resource path="res://Art/TextureButtons/Start/normal.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/Score.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Art/title.png" type="Texture" id=8]
 [ext_resource path="res://Sound/click.ogg" type="AudioStream" id=9]
 
@@ -32,6 +33,15 @@ margin_bottom = 32.0
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 2 )
+
+[node name="CreditsLabel" type="Label" parent="."]
+margin_top = 114.0
+margin_right = 320.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "BY NORMAN AND MEGAN LANCASTER"
+align = 1
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
