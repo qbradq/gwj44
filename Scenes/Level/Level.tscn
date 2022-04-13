@@ -13,6 +13,10 @@
 [node name="Level" type="Node2D"]
 script = ExtResource( 4 )
 
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+
 [node name="AfterDeathTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
@@ -21,71 +25,6 @@ one_shot = true
 position = Vector2( 160, 90 )
 
 [node name="AudioTemp" type="Node" parent="."]
-
-[node name="ScoreLabel" type="Label" parent="."]
-margin_left = 6.0
-margin_top = 6.0
-margin_right = 91.0
-margin_bottom = 22.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 6 )
-text = "SCORE: 1337"
-
-[node name="AmmoLabel" type="Label" parent="."]
-margin_left = 223.0
-margin_top = 160.0
-margin_right = 315.0
-margin_bottom = 176.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 6 )
-text = "AMMO: 100"
-
-[node name="TimeLabel" type="Label" parent="."]
-margin_left = 221.0
-margin_top = 5.0
-margin_right = 313.0
-margin_bottom = 21.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 6 )
-text = "TIME: 1:59:59"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
-
-[node name="Pause" type="Control" parent="CanvasLayer"]
-pause_mode = 2
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 5 )
-
-[node name="BlackOverlay" type="ColorRect" parent="CanvasLayer/Pause"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.25098 )
-
-[node name="PauseLabel" type="Label" parent="CanvasLayer/Pause"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -95.0
-margin_top = -32.0
-margin_right = 95.0
-margin_bottom = 32.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 2 )
-text = "PAUSE"
-
-[node name="MuteButton" parent="CanvasLayer/Pause" instance=ExtResource( 9 )]
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 0.0
-anchor_bottom = 1.0
-margin_left = 0.0
-margin_top = -64.0
-margin_right = 64.0
-margin_bottom = 0.0
 
 [node name="Spawners" type="Node2D" parent="."]
 
@@ -98,5 +37,73 @@ spawn_delay = 20.0
 [node name="Zipper" parent="Spawners" instance=ExtResource( 3 )]
 enemy_scene = ExtResource( 7 )
 spawn_delay = 40.0
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ScoreLabel" type="Label" parent="UILayer"]
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 91.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "SCORE: 1337"
+
+[node name="AmmoLabel" type="Label" parent="UILayer"]
+margin_left = 223.0
+margin_top = 160.0
+margin_right = 315.0
+margin_bottom = 176.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "AMMO: 100"
+
+[node name="TimeLabel" type="Label" parent="UILayer"]
+margin_left = 221.0
+margin_top = 5.0
+margin_right = 313.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "TIME: 1:59:59"
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Pause" type="Control" parent="PauseLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="BlackOverlay" type="ColorRect" parent="PauseLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.25098 )
+
+[node name="PauseLabel" type="Label" parent="PauseLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0
+margin_top = -32.0
+margin_right = 95.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "PAUSE"
+
+[node name="MuteButton" parent="PauseLayer/Pause" instance=ExtResource( 9 )]
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_left = 0.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 0.0
 
 [connection signal="timeout" from="AfterDeathTimer" to="." method="_on_AfterDeathTimer_timeout"]
