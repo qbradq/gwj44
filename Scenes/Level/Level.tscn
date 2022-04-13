@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/Pause.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/Level/Spawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Level/Level.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Level/Pause.gd" type="Script" id=5]
 [ext_resource path="res://Fonts/Score.tres" type="DynamicFont" id=6]
 
 [node name="Level" type="Node2D"]
@@ -45,5 +47,33 @@ margin_bottom = 21.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "TIME: 1:59:59"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Pause" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="BlackOverlay" type="ColorRect" parent="CanvasLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.25098 )
+
+[node name="PauseLabel" type="Label" parent="CanvasLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0
+margin_top = -32.0
+margin_right = 95.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "PAUSE"
 
 [connection signal="timeout" from="AfterDeathTimer" to="." method="_on_AfterDeathTimer_timeout"]
