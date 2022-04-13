@@ -1,38 +1,39 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scenes/Results.gd" type="Script" id=1]
-[ext_resource path="res://Art/TextureButtons/Start/hover.png" type="Texture" id=2]
-[ext_resource path="res://Art/TextureButtons/Start/pressed.png" type="Texture" id=3]
-[ext_resource path="res://Art/TextureButtons/Start/normal.png" type="Texture" id=4]
-[ext_resource path="res://Fonts/Score.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Sound/click.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/UI/MuteButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Art/TextureButtons/Start/normal.png" type="Texture" id=2]
+[ext_resource path="res://Art/TextureButtons/Start/hover.png" type="Texture" id=3]
+[ext_resource path="res://Art/TextureButtons/Start/pressed.png" type="Texture" id=4]
+[ext_resource path="res://Sound/click.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Fonts/Score.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Scenes/UI/Results.gd" type="Script" id=7]
 
 [node name="Results" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 
 [node name="SurvivedLabel" type="Label" parent="."]
 margin_left = -1.0
-margin_top = 36.0
+margin_top = 61.0
 margin_right = 320.0
-margin_bottom = 52.0
+margin_bottom = 77.0
 rect_pivot_offset = Vector2( -15, -17 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "YOU SURVIVED FOR 59:59"
 align = 1
 
 [node name="ScoreLabel" type="Label" parent="."]
 margin_left = -1.0
-margin_top = 69.0
+margin_top = 95.0
 margin_right = 320.0
-margin_bottom = 85.0
+margin_bottom = 111.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 text = "YOUR SCORE WAS 9999"
 align = 1
 
@@ -45,9 +46,11 @@ margin_right = 128.0
 [node name="StartButton" type="TextureButton" parent="VBoxContainer"]
 margin_right = 128.0
 margin_bottom = 32.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 2 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+
+[node name="MuteButton" parent="." instance=ExtResource( 1 )]
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]

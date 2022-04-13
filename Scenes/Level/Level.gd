@@ -26,4 +26,4 @@ func _physics_process(delta):
 			c.queue_free()
 
 func _on_AfterDeathTimer_timeout():
-	get_tree().change_scene("res://Scenes/Results.tscn")
+	get_tree().change_scene("res://Scenes/UI/Results.tscn")
