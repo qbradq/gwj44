@@ -19,11 +19,17 @@ func _ready():
 		queue_free()
 
 func _physics_process(delta):
-	# Look at the nearest enemy
+#	# Look at the nearest enemy
+#	if nearest_enemy:
+#		var e = nearest_enemy.get_ref()
+#		if e:
+#			look_at(e.global_position)
+#			velocity = (Vector2.RIGHT * speed).rotated(rotation)
+	# Slowly turn towards the nearest enemy
 	if nearest_enemy:
 		var e = nearest_enemy.get_ref()
 		if e:
-			look_at(e.global_position)
+			rotation += get_angle_to(e.global_position) * 2.5 * PI * delta
 			velocity = (Vector2.RIGHT * speed).rotated(rotation)
 	# Dirty hack
 	if velocity == Vector2.ZERO:
