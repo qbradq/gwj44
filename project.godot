@@ -12,7 +12,7 @@ config_version=4
 
 config/name="Pew Pew"
 config/description="A simple space shooter where everything explodes in one hit, including your own ship!"
-run/main_scene="res://Scenes/UI/Menu.tscn"
+run/main_scene="res://Scenes/UI/Splash.tscn"
 config/icon="res://icon.png"
 
 [autoload]
