@@ -17,3 +17,11 @@ polygon = PoolVector2Array( 7, -26, 19, 20, -13, 21, -17, 14, -17, 2, -10, -15 )
 
 [node name="Sprite" parent="." index="3"]
 texture = ExtResource( 2 )
+
+[node name="LaunchPoint" type="Node2D" parent="." index="4"]
+position = Vector2( 23, 0 )
+
+[node name="LaunchTimer" type="Timer" parent="." index="5"]
+autostart = true
+
+[connection signal="timeout" from="LaunchTimer" to="." method="_on_LaunchTimer_timeout"]
