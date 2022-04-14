@@ -4,7 +4,7 @@
 [ext_resource path="res://Art/Enemy/rito.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Enemy/Rito.gd" type="Script" id=3]
 
-[node name="Enemy" instance=ExtResource( 1 )]
+[node name="Rito" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 speed = 15.0
 
