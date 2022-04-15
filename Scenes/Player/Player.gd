@@ -40,6 +40,7 @@ func _physics_process(delta):
 		$Gun.reset()
 
 func die():
+	return
 	# Play death audio and make it persistent
 	var pa = $PowAudio
 	if pa != null:
