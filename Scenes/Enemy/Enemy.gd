@@ -5,7 +5,8 @@ export var speed:float = 50.0
 export var points:int = 1
 
 
-var sparks_scene:PackedScene = load("res://Scenes/Bits/Sparks.tscn")
+var sparks_scene:PackedScene = preload("res://Scenes/Bits/Sparks.tscn")
+var points_scene:PackedScene = preload("res://Scenes/UI/Points.tscn")
 var drop_chance:float = 10.0
 var velocity:Vector2
 
@@ -27,6 +28,10 @@ func _physics_process(delta):
 func die():
 	# Score
 	LevelData.add_score(points)
+	var p := points_scene.instance()
+	p.points = points
+	p.global_position = global_position
+	get_parent().get_node("PointsLayer").add_child(p)
 	# Play the pow sound effect
 	var pa = $PowAudio
 	if pa != null:

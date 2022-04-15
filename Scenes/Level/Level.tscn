@@ -56,8 +56,11 @@ enemy_scene = ExtResource( 12 )
 spawn_interval = 0.05
 spawn_delay = 90.0
 
-[node name="UILayer" type="CanvasLayer" parent="."]
+[node name="PointsLayer" type="CanvasLayer" parent="."]
 layer = 2
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 3
 
 [node name="ScoreLabel" type="Label" parent="UILayer"]
 margin_left = 6.0
@@ -87,7 +90,7 @@ custom_fonts/font = ExtResource( 6 )
 text = "TIME: 1:59:59"
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
-layer = 3
+layer = 128
 
 [node name="Pause" type="Control" parent="PauseLayer"]
 pause_mode = 2
