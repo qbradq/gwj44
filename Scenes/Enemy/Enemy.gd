@@ -51,7 +51,7 @@ func die():
 
 
 func look_at_player():
-	var p:Area2D = get_parent().find_node("Player")
+	var p:Area2D = get_parent().get_node_or_null("Player")
 	if p != null:
 		look_at(p.global_position)
 

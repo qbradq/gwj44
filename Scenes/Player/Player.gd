@@ -14,7 +14,6 @@ var track_mouse:bool
 
 
 func _ready():
-	add_to_group("player")
 	default_gun = default_gun_scene.instance()
 	default_gun.infinite_ammo = true
 	change_gun(default_gun)
