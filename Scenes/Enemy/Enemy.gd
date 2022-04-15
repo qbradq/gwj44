@@ -2,6 +2,7 @@ extends Area2D
 
 
 export var speed:float = 50.0
+export var points:int = 1
 
 
 var sparks_scene:PackedScene = load("res://Scenes/Bits/Sparks.tscn")
@@ -25,7 +26,7 @@ func _physics_process(delta):
 
 func die():
 	# Score
-	LevelData.increment_score()
+	LevelData.add_score(points)
 	# Play the pow sound effect
 	var pa = $PowAudio
 	if pa != null:

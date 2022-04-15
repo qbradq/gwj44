@@ -10,12 +10,13 @@ points = PoolVector2Array( 0, -8, 8, 8, -8, 8 )
 [node name="Enemy" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 speed = 25.0
+points = 2
 
-[node name="Sprite" parent="." index="1"]
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="3"]
 scale = Vector2( 0.8, 0.8 )

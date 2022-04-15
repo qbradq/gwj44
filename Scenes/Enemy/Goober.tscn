@@ -11,10 +11,10 @@ extents = Vector2( 12, 12 )
 script = ExtResource( 3 )
 speed = 12.5
 
-[node name="Sprite" parent="." index="1"]
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="3"]

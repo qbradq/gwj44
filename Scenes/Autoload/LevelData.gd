@@ -12,8 +12,8 @@ func reset():
 func get_score()->int:
 	return score
 
-func increment_score():
-	score += 1
+func add_score(amount):
+	score += amount
 
 func stop_timing():
 	time_running = false
