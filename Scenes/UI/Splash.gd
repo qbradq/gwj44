@@ -3,6 +3,7 @@ extends Control
 
 func _ready():
 	randomize()
+	SaveGame.load_data()
 
 
 func _input(event):

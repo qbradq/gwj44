@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 
 LevelData="*res://Scenes/Autoload/LevelData.gd"
 HighScores="*res://Scenes/Autoload/HighScores.gd"
+SaveGame="*res://Scenes/Autoload/SaveGame.gd"
 
 [display]
 

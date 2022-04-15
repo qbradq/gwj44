@@ -9,6 +9,7 @@ func _on_MuteButton_pressed():
 	$AudioStreamPlayer.play()
 	AudioServer.set_bus_mute(0, not AudioServer.is_bus_mute(0))
 	update_button_texture()
+	SaveGame.save_data()
 
 
 func update_button_texture():

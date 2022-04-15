@@ -29,6 +29,7 @@ func _ready():
 
 func _on_StartButton_pressed():
 	$AudioStreamPlayer.play()
+	SaveGame.save_data()
 	yield($AudioStreamPlayer, "finished")
 	get_tree().change_scene("res://Scenes/Level/Level.tscn")
 

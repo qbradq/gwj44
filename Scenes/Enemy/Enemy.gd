@@ -18,10 +18,6 @@ var powerups = [
 ]
 
 
-func _ready():
-	add_to_group("enemy")
-
-
 func _physics_process(delta):
 	# Movement
 	global_position += velocity * delta
