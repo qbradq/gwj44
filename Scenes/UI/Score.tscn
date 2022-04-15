@@ -4,9 +4,10 @@
 [ext_resource path="res://Fonts/Score.tres" type="DynamicFont" id=2]
 
 [node name="Score1" type="Label"]
-margin_right = 141.0
-margin_bottom = 14.0
+anchor_right = 1.0
+margin_bottom = 16.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-text = "#1 NORMAN!! 9999"
+text = "#1 NORMAN!! 9999 99:59"
+align = 1
 script = ExtResource( 1 )

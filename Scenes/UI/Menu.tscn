@@ -1,16 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/UI/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/UI/MuteButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Art/TextureButtons/Start/normal.png" type="Texture" id=3]
-[ext_resource path="res://Art/TextureButtons/Start/hover.png" type="Texture" id=4]
-[ext_resource path="res://Art/TextureButtons/Start/pressed.png" type="Texture" id=5]
+[ext_resource path="res://Theme.tres" type="Theme" id=3]
 [ext_resource path="res://Art/title.png" type="Texture" id=6]
 [ext_resource path="res://Sound/click.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Fonts/Score.tres" type="DynamicFont" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -18,7 +16,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
@@ -43,6 +41,7 @@ tracks/0/keys = {
 modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -62,19 +61,10 @@ anchor_bottom = 1.0
 margin_top = -32.0
 margin_right = 128.0
 
-[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
-margin_right = 128.0
-margin_bottom = 32.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 4 )
-
 [node name="CreditsLabel" type="Label" parent="."]
 margin_top = 116.0
 margin_right = 320.0
 margin_bottom = 132.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 8 )
 text = "BY NORMAN AND MEGAN LANCASTER"
 align = 1
 
@@ -84,5 +74,14 @@ align = 1
 anims/FadeIn = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
+[node name="StartButton" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = -39.0
+margin_right = 100.0
+margin_bottom = -7.0
+text = "START"
+
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

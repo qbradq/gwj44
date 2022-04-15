@@ -7,7 +7,5 @@ func _ready():
 
 func _on_StartButton_pressed():
 	$AudioStreamPlayer.play()
-
-
-func _on_AudioStreamPlayer_finished():
+	yield($AudioStreamPlayer, "finished")
 	get_tree().change_scene("res://Scenes/Level/Level.tscn")

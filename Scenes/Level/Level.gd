@@ -30,4 +30,4 @@ func _physics_process(delta):
 
 
 func _on_AfterDeathTimer_timeout():
-	get_tree().change_scene("res://Scenes/UI/Results.tscn")
+	get_tree().change_scene("res://Scenes/UI/HighScores.tscn")
