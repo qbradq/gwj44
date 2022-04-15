@@ -71,6 +71,7 @@ align = 1
 [node name="MuteButton" parent="." instance=ExtResource( 2 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "FadeIn"
 anims/FadeIn = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 

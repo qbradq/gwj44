@@ -1,6 +1,9 @@
 extends Control
 
 
+export var next_scene:PackedScene = load("res://Scenes/UI/Splash2.tscn")
+
+
 func _ready():
 	randomize()
 	SaveGame.load_data()
@@ -16,4 +19,4 @@ func _input(event):
 func _on_Timer_timeout():
 	$AnimationPlayer.play("FadeOut")
 	yield($AnimationPlayer, "animation_finished")
-	get_tree().change_scene("res://Scenes/UI/Menu.tscn")
+	get_tree().change_scene_to(next_scene)

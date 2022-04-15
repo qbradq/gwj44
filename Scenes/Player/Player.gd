@@ -46,7 +46,7 @@ func die():
 		remove_child(pa)
 		get_parent().find_node("AudioTemp").add_child(pa)
 		pa.play()
-	# Create sparkes explosion
+	# Create sparks explosion
 	var sparks = sparks_scene.instance()
 	sparks.global_position = global_position
 	sparks.restart()
