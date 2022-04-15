@@ -1,21 +1,24 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=11 format=2]
 
 [ext_resource path="res://Fonts/Button.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Fonts/Label.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Art/TextureButtons/button_highlight.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 1, 1, 1, 1 )
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 256, 64 )
 
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 1, 1, 1, 1 )
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 256, 64 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="StyleBoxFlat" id=10]
@@ -33,10 +36,10 @@ Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
 Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Button/fonts/font = ExtResource( 1 )
 Button/styles/disabled = SubResource( 6 )
-Button/styles/focus = SubResource( 7 )
-Button/styles/hover = SubResource( 8 )
+Button/styles/focus = SubResource( 11 )
+Button/styles/hover = SubResource( 12 )
 Button/styles/normal = SubResource( 4 )
-Button/styles/pressed = SubResource( 9 )
+Button/styles/pressed = SubResource( 13 )
 Label/colors/font_color = Color( 0, 0, 0, 1 )
 Label/fonts/font = ExtResource( 2 )
 LineEdit/colors/font_color = Color( 0, 0, 0, 1 )

@@ -2,11 +2,11 @@ extends Node
 
 
 var scores = [
-	[100, 100, "NORM"],
+	[100, 100, "URMOM"],
 	[80, 80, "NORM"],
 	[60, 60, "NORM"],
 	[40, 40, "NORM"],
-	[20, 20, "NORM"],
+	[24, 17, "BOB"],
 ]
 
 

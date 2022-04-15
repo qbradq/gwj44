@@ -5,6 +5,7 @@ var sidx:int
 
 
 func _ready():
+	$VBoxContainer/StartButton.grab_focus()
 	# Figure out if we're storing this score
 	if HighScores.is_high_score(LevelData.score):
 		# UI setup
