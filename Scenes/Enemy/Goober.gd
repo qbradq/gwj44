@@ -1,9 +1,12 @@
 extends "res://Scenes/Enemy/Enemy.gd"
 
+
 var was_on_screen:bool
+
 
 func _ready():
 	velocity = (Vector2(160, 90) - global_position).normalized() * speed
+
 
 func _physics_process(delta):
 	# AI processing

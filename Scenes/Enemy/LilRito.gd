@@ -1,9 +1,12 @@
 extends "res://Scenes/Enemy/Enemy.gd"
 
+
 export var seek:bool
+
 
 func _ready():
 	seek_player()
+
 
 func _physics_process(delta):
 	# AI processing

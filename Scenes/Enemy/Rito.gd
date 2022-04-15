@@ -1,6 +1,8 @@
 extends "res://Scenes/Enemy/Enemy.gd"
 
+
 export var lilrito_scene = preload("res://Scenes/Enemy/LilRito.tscn")
+
 
 func _physics_process(delta):
 	# AI processing
